@@ -68,6 +68,14 @@ td
 	margin-top:6px;
 	height:16px;
 }
+.img .info .name
+{
+	float:left;
+}
+.img .info .btns
+{
+	float:right;
+}
 
 .img .rothandles div
 {
