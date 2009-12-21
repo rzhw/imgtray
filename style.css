@@ -37,7 +37,29 @@ td
 #toolbar
 {
 	float:right;
-	margin:16px 16px 0px 0px;
+}
+
+.toolbar_btn
+{
+	margin:8px;
+	height:48px;
+	overflow:hidden;
+}
+
+.toolbar_btn img:first-child
+{
+	float:left;
+	padding:8px;
+	width:32px;
+	height:32px;
+	background:#aaa;
+}
+.toolbar_btn .content
+{
+	float:left;
+	padding:8px;
+	height:32px;
+	background:#aaa;
 }
 
 #area,#msgwrap1
