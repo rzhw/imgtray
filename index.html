@@ -40,13 +40,26 @@
 			<img src="img/logo.png" alt="imgtray" />
 			<section id="toolbar">
 				<div class="toolbar_btn">
-					<img src="img/toolbar/add.png" alt="Add" />
+					<img src="img/toolbar/info.png" class="button" alt="Info" />
 					<div class="content">
-						URL: <input type="text" id="toolbar_add_url" />
+						imgtray pre-alpha 2<br />
+						imgtray is copyright &copy; a2h 2009 and is licensed under the GNU AGPL v3<br />
+						Source is available at <a href="http://github.com/a2h/imgtray">the git repository</a>
+					</div>
+				</div>
+				<div class="toolbar_btn">
+					<img src="img/toolbar/add.png" class="button" alt="Add" />
+					<div class="content">
+						<div class="left">
+							URL <img src="img/toolbar/tip.png" alt="" /> <input type="text" id="toolbar_add_url" /><br />
+							Width/height <img src="img/toolbar/tip.png" alt="" /> <input type="text" id="toolbar_add_width" /> <input type="text" id="toolbar_add_height" />
+						</div>
+						<div class="left go">
+							<img src="img/toolbar/go.png" id="toolbar_add_go" alt="go" />
+						</div>
 					</div>
 				</div>
 			</section>
-			<span style="color:#777;">pre-alpha 1 :: very early demo - you can only drag and rotate a sample image</span>
 		</header>
 		<div id="area">
 			<div class="img drag" style="width:256px;margin:0px auto;">

@@ -4,10 +4,11 @@ body
 	margin:0px;
 	padding:0px;
 }
-body,td
+body,td,input
 {
 	font-family:'helvetica neue',helvetica,arial,sans-serif;
 	font-size:13px;
+	outline:0;
 }
 
 header,section,footer,aside,nav,article,figure
@@ -23,6 +24,15 @@ td
 {
 	border:0px;
 	padding:0px;
+}
+
+.left
+{
+	float:left;
+}
+.right
+{
+	float:right;
 }
 
 #header
@@ -41,25 +51,53 @@ td
 
 .toolbar_btn
 {
-	margin:8px;
+	float:right;
+	margin:8px 8px 8px 0px;
 	height:48px;
-	overflow:hidden;
 }
 
-.toolbar_btn img:first-child
+.toolbar_btn .button
 {
 	float:left;
 	padding:8px;
 	width:32px;
 	height:32px;
-	background:#aaa;
+	background:rgba(128,128,128,0.33);
 }
 .toolbar_btn .content
 {
 	float:left;
 	padding:8px;
 	height:32px;
-	background:#aaa;
+	overflow:hidden;
+	background:#fff;
+	font-size:11px;
+}
+.toolbar_btn .content input
+{
+	font-size:11px;
+	border:1px solid #aaa;
+	color:#333;
+}
+.toolbar_btn .go
+{
+	padding:6px 0px 0px 6px;
+	cursor:pointer;
+}
+.toolbar_btn .go img
+{
+	width:18px;
+	height:18px;
+}
+
+#toolbar_add_url
+{
+	width:144px;
+	margin-bottom:2px;
+}
+#toolbar_add_width, #toolbar_add_height
+{
+	width:32px;
 }
 
 #area,#msgwrap1

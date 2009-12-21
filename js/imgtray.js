@@ -22,19 +22,50 @@
  *
  */
 
-/// IMAGE MANAGEMENT
+///
+/// TOOLBAR
+///
 
-function addImage(href,options)
+$(document).ready(function() {
+	$(".toolbar_btn .content").css({'display':'none'});
+	$(".toolbar_btn").find("img:first").click(function() {
+		$(".toolbar_btn .content").each(function() {
+			if ($(this).css('display') != 'none')
+			{
+				$(this).animate({'width':'toggle'});
+			}
+		});
+		$(this).parent().find(".content").stop().animate({'width':'toggle'});
+	});
+	
+	$("#toolbar_add_go").click(function() {
+		addImage($("#toolbar_add_url").text(), $("#toolbar_add_width").text(), $("#toolbar_add_height").text());
+	});
+});
+
+///
+/// IMAGE MANAGEMENT
+///
+
+function addImage(href,width,height)
 {
-	settings = $.extend({
-		width: 256,
-		height: 192
-	}, options);
+	var settings = {};
 	
+	if (isNaN(parseInt(width)))
+	{
+		settings.width = 256;
+	}
+	if (isNaN(parseInt(height)))
+	{
+		settings.height = 192;
+	}
 	
+	alert(settings.width);
 }
 
+///
 /// IMAGE ROTATION
+///
 
 var mouseX   = 0;
 var mouseY   = 0;
