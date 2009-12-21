@@ -136,11 +136,24 @@
 					return false;
 				}
 			});
+			
+			function addImage(href,options)
+			{
+				settings = $.extend({
+					width: 256,
+					height: 192
+				}, options);
+				
+				
+			}
 		</script>
 	</head>
 	<body>
 		<header id="header">
 			<img src="img/logo.png" alt="imgtray" />
+			<section id="toolbar">
+				<img src="img/toolbar/add.png" alt="Add" />
+			</section>
 			<span style="color:#777;">pre-alpha 1 :: very early demo - you can only drag and rotate a sample image</span>
 		</header>
 		<div id="area">
