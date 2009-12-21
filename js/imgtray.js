@@ -39,7 +39,7 @@ $(document).ready(function() {
 	});
 	
 	$("#toolbar_add_go").click(function() {
-		addImage($("#toolbar_add_url").text(), $("#toolbar_add_width").text(), $("#toolbar_add_height").text());
+		imageAdd($("#toolbar_add_url").attr('value'), $("#toolbar_add_width").attr('value'), $("#toolbar_add_height").attr('value'));
 	});
 });
 
@@ -47,20 +47,29 @@ $(document).ready(function() {
 /// IMAGE MANAGEMENT
 ///
 
-function addImage(href,width,height)
+var imgbuttons = '<div class="btns"><img src="img/btn/edit.png" alt="edit" /> <img src="img/btn/info.png" alt="info" /></div>';
+var imghandles = '<div class="rothandles"><div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div></div>';
+
+function imageAdd(href,width,height)
 {
 	var settings = {};
 	
 	if (isNaN(parseInt(width)))
 	{
-		settings.width = 256;
+		width = 256;
 	}
 	if (isNaN(parseInt(height)))
 	{
-		settings.height = 192;
+		height = 192;
 	}
 	
-	alert(settings.width);
+	$('<div class="img drag"></div>')
+		.css({ width: width, margin: '0px auto' })
+		.append('<img class="imgimg" src="' + href + '" alt="" />')
+		.append('<div class="info"><div class="name">asdf</div>' + imgbuttons + '<div class="clear"></div></div>')
+		.append(imghandles)
+		.appendTo("#area")
+		.imageRotAdd();
 }
 
 ///
@@ -129,18 +138,21 @@ $(document).ready(function() {
 		}
 	});
 	
-	$(".img.drag").each(function(i,elm) {
-		$(elm).jqDrag($(elm).find(".imgimg"));
+	$.fn.imageRotAdd = function()
+	{
+		$(this).jqDrag($(this).find(".imgimg"));
 		
-		$(elm).find(".rothandles .tl").css({left:-24,top:-24}).bind('mousedown',rot);
-		$(elm).find(".rothandles .tr").css({left:$(elm).width()+16,top:-24}).bind('mousedown',rot);
-		$(elm).find(".rothandles .bl").css({left:-24,top:$(elm).height()+16}).bind('mousedown',rot);
-		$(elm).find(".rothandles .br").css({left:$(elm).width()+16,top:$(elm).height()+16}).bind('mousedown',rot);
+		$(this).find(".rothandles .tl").css({left:-24,top:-24}).bind('mousedown',imageRot);
+		$(this).find(".rothandles .tr").css({left:$(this).width()+16,top:-24}).bind('mousedown',imageRot);
+		$(this).find(".rothandles .bl").css({left:-24,top:$(this).height()+16}).bind('mousedown',imageRot);
+		$(this).find(".rothandles .br").css({left:$(this).width()+16,top:$(this).height()+16}).bind('mousedown',imageRot);
 		
-		$(elm).css('transform','rotate(0deg)');
-	});
-   
-	function rot()
+		$(this).css('transform','rotate(0deg)');
+		
+		return this;
+	}
+	
+	function imageRot()
 	{
 		$().bind('mouseup',function() {
 			// stop rotation, obviously
