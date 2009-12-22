@@ -35,7 +35,10 @@ $(document).ready(function() {
 				$(this).animate({'width':'toggle'});
 			}
 		});
-		$(this).parent().find(".content").stop().animate({'width':'toggle'});
+		if ($(this).parent().find(".content").css('display') == 'none') // remember this is executed before the animate above finishes
+		{
+			$(this).parent().find(".content").animate({'width':'toggle'});
+		}
 	});
 	
 	$("#toolbar_add_go").click(function() {
