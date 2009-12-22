@@ -39,7 +39,7 @@ $(document).ready(function() {
 	});
 	
 	$("#toolbar_add_go").click(function() {
-		imageAdd($("#toolbar_add_url").attr('value'), $("#toolbar_add_width").attr('value'), $("#toolbar_add_height").attr('value'));
+		imageAdd($("#toolbar_add_url").attr('value'), $("#toolbar_add_width").attr('value'));
 	});
 });
 
@@ -50,20 +50,16 @@ $(document).ready(function() {
 var imgbuttons = '<div class="btns"><img src="img/btn/edit.png" alt="edit" /> <img src="img/btn/info.png" alt="info" /></div>';
 var imghandles = '<div class="rothandles"><div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div></div>';
 
-function imageAdd(href,imgwidth,imgheight)
+function imageAdd(href,imgwidth)
 {
 	if (isNaN(parseInt(imgwidth)))
 	{
 		imgwidth = 256;
 	}
-	if (isNaN(parseInt(imgheight)))
-	{
-		imgheight = 192;
-	}
 	
 	$('<div class="img drag"></div>')
 		.css({ width: imgwidth+'px', margin: '0px auto' })
-		.append('<img class="imgimg" src="' + href + '" alt="" />')
+		.append('<img class="imgimg" src="' + href + '" style="width:' + imgwidth + 'px;" alt="" />')
 		.append('<div class="info"><div class="name">asdf</div>' + imgbuttons + '<div class="clear"></div></div>')
 		.append(imghandles)
 		.appendTo("#area")

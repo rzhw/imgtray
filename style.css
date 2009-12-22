@@ -96,10 +96,10 @@ td
 
 #toolbar_add_url
 {
-	width:144px;
+	width:128px;
 	margin-bottom:2px;
 }
-#toolbar_add_width, #toolbar_add_height
+#toolbar_add_width
 {
 	width:32px;
 }
