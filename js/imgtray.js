@@ -63,7 +63,7 @@ function imageAdd(href,imgwidth,imgheight)
 	
 	$('<div class="img drag"></div>')
 		.css({ width: imgwidth+'px', margin: '0px auto' })
-		.append('<img class="imgimg" src="' + href + '" alt="" />')
+		.append('<img class="imgimg" src="' + href + '" style="width:' + imgwidth + 'px;height: ' + imgheight + 'px;" alt="" />')
 		.append('<div class="info"><div class="name">asdf</div>' + imgbuttons + '<div class="clear"></div></div>')
 		.append(imghandles)
 		.appendTo("#area")
