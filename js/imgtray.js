@@ -84,7 +84,7 @@ var elmCenter = [];
 $(document).ready(function() {
 	var mouseElm;
 	
-	$().mousemove(function(e) {
+	$(document).mousemove(function(e) {
 		mouseX = e.pageX;
 		mouseY = e.pageY;
 		
@@ -151,7 +151,7 @@ $(document).ready(function() {
 	
 	function imageRot()
 	{
-		$().bind('mouseup',function() {
+		$(document).bind('mouseup',function() {
 			// stop rotation, obviously
 			mouseRot = false;
 			// return the mouse to its original state
